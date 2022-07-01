@@ -6,21 +6,21 @@ function contar() {
     var i = Number(inicio.value);
     var f = Number(fim.value);
     var p = Number(passo.value);
-    res.innerHTML = 'Contagem '
+    res.innerHTML = 'Contagem ';
 
     if (inicio.value.length == 0 || fim.value.length == 0) {
 
         // Início ou fim em branco
 
-        res.innerHTML = `Tente novamente. ${String.fromCodePoint(0x1F61F)}`
-        alert('Complete todos os campos!')
+        res.innerHTML = `Tente novamente. ${String.fromCodePoint(0x1F61F)}`;
+        alert('Complete todos os campos!');
 
     } else if (i == 0 && f == 0) {
 
         // Início e fim com o valor 0
 
-        res.innerHTML = `Tente novamente. ${String.fromCodePoint(0x1F61F)}`
-        alert('Impossível contar!')
+        res.innerHTML = `Tente novamente. ${String.fromCodePoint(0x1F61F)}`;
+        alert('Impossível contar!');
 
     } else if (passo.value.length == 0 || p == 0) {
 
@@ -30,25 +30,25 @@ function contar() {
         p = 1;
     } 
     
-    if (i < f) {
+    if (i < f && inicio.value.length != 0) {
 
         // Contagem crescente
 
-        res.innerHTML += 'crescente: '
+        res.innerHTML += 'crescente: ';
         for (; i <= f; i += p) {
-            res.innerHTML += `${i}${String.fromCodePoint(0x1F449)}` // o emoji pode ser '\u{1F449}'
+            res.innerHTML += `${i}${String.fromCodePoint(0x1F449)}`; // o emoji pode ser '\u{1F449}'
         }
-        res.innerHTML += `${String.fromCodePoint(0x1F3C1)}`
+        res.innerHTML += `${String.fromCodePoint(0x1F3C1)}`;
 
-    } else if (f < i) {
+    } else if (f < i && fim.value.length != 0) {
 
         // Contagem decrescente
 
-        res.innerHTML += 'decrescente: '
+        res.innerHTML += 'decrescente: ';
         for (; f <= i; i -= p) {
-            res.innerHTML += `${i}${String.fromCodePoint(0x1F449)}`
+            res.innerHTML += `${i}${String.fromCodePoint(0x1F449)}`;
         }
-        res.innerHTML += `${String.fromCodePoint(0x1F3C1)}`
+        res.innerHTML += `${String.fromCodePoint(0x1F3C1)}`;
 
     } else if (i == f && inicio.value.length != 0 && fim.value.length != 0) {
 
