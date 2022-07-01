@@ -17,13 +17,13 @@ function contar() {
         n3 = 1;
     }
 
-    if (n1 <= n2 && n1 != 0 && n2 != 0){
+    if (n1 <= n2){
         res.innerHTML += 'crescente: '
         for (; n1 <= n2; n1 += n3) {
             res.innerHTML += `${n1}${String.fromCodePoint(0x1F449)}`
         }
         res.innerHTML += `${String.fromCodePoint(0x1F3C1)}`
-    } else if (n2 <= n1 && n1 != 0 && n2 != 0) {
+    } else if (n2 <= n1) {
         res.innerHTML += 'decrescente: '
         for (; n2 <= n1; n1 -= n3){
             res.innerHTML += `${n1}${String.fromCodePoint(0x1F449)}`
